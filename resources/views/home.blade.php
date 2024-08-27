@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">\
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
-        /* Loader styles */
         #loader {
             display: none;
             position: fixed;
@@ -260,33 +259,29 @@
                                 </td>
                             </tr>
                         `;
-
-                        // Append the generated row to your table body
                         $('#task-list').append(taskRow);
                     });
         }
 
         function addData(task){
-                        var taskRow = `
-                            <tr class="" data-id="${task.id}">
-                                <th class="task-serial" scope="row">${0}</th>
-                                <td>
-                                    <span class="task-title">
-                                        ${task.title}
-                                    </span>
-                                </td>
-                                <td>${task.is_completed ? 'Done' : ''}</td>
-                                <td>
-                                    <div>${!task.is_completed ?
-                                        '<button class="btn btn-success btn-sm update-task task-checkbox" type="checkbox"> &#10003;</button>' : ''}
-                                        <button class="btn btn-danger btn-sm delete-task"> &#x2715;</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        `;
-
-                        // Append the generated row to your table body
-                        $('#task-list').append(taskRow);
+            var taskRow = `
+                <tr class="" data-id="${task.id}">
+                    <th class="task-serial" scope="row">${0}</th>
+                    <td>
+                        <span class="task-title">
+                            ${task.title}
+                        </span>
+                    </td>
+                    <td>${task.is_completed ? 'Done' : ''}</td>
+                    <td>
+                        <div>${!task.is_completed ?
+                            '<button class="btn btn-success btn-sm update-task task-checkbox" type="checkbox"> &#10003;</button>' : ''}
+                            <button class="btn btn-danger btn-sm delete-task"> &#x2715;</button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            $('#task-list').append(taskRow);
         }
     });
 </script>
